@@ -3,6 +3,7 @@
 # Aliases
 #################################
 alias sqlroot="mysql -u root -proot"
+alias sqlsort="script/test.d/98_sql_fingerprint --only-sort"
 alias v="vim"
 #################################
 # Functions

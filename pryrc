@@ -1,6 +1,21 @@
 
-puts "Defining the stack() method..."
+# Pry Initialization Script
+
+puts "Executing ~/.pryrc Initialization Script"
 def stack
   caller.select {|line| line.include? "themis" }
 end
-puts "Done."
+
+Dir.chdir('/home/vagrant/clio/themis')
+# Source factories
+puts "  Sourcing Themis factories"
+Factory.definition_file_paths = %W(#{Rails.root}/spec/factories)
+Factory.find_definitions
+puts "  Sourcing Iris factories"
+Factory.definition_file_paths = %W(#{Iris::Engine.root}/spec/factories)
+Factory.find_definitions
+
+puts "Enabling SQL output in console"
+ActiveRecord::Base.logger = Logger.new(STDOUT)
+
+puts "Pry Initialization complete!"

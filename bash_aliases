@@ -16,6 +16,7 @@ alias ps-show-rails="ps ax | grep rails"
 alias source-bashrc="pushd ~; source .bashrc; popd"
 alias sqlroot="mysql -u root -proot"
 alias sqlsort="script/test.d/98_sql_fingerprint --only-sort"
+alias unfuck-angular="rm -rf node_modules public/assets/* && bundle install && npm install && bundle exec rake tmp:cache:clear browserify:generate_index"
 alias v="vim"
 #################################
 # Functions

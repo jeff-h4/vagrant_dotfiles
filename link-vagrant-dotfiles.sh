@@ -10,4 +10,5 @@ ln -s $PROJ_NAME/irbrc .irbrc
 ln -s $PROJ_NAME/pryrc .pryrc
 rm .profile
 ln -s $PROJ_NAME/profile .profile
+ln -s $PROJ_NAME/zshrc .zshrc
 echo "Finished linking the dotfiles"

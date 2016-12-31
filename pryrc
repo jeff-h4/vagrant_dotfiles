@@ -14,6 +14,10 @@ Factory.find_definitions
 puts "  Sourcing Iris factories"
 Factory.definition_file_paths = %W(#{Iris::Engine.root}/spec/factories)
 Factory.find_definitions
+# load Rails Console helpers like reload
+require 'rails/console/app'
+extend Rails::ConsoleMethods
+puts 'Rails Console Helpers loaded'
 
 puts "Enabling SQL output in console"
 ActiveRecord::Base.logger = Logger.new(STDOUT)

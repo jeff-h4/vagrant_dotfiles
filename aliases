@@ -4,6 +4,7 @@
 #################################
 alias ll="ls -la"
 alias add-alias="vim ~/.aliases"
+alias csql="bundle exec csql"
 alias db-dump="mysqldump -u root -proot themis_development > vagrant_db.sql"
 alias db-load="mysql -u root -proot themis_development < vagrant_db.sql"
 alias db-load-file="mysql -u root -proot themis_development < "

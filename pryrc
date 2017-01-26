@@ -2,8 +2,22 @@
 # Pry Initialization Script
 
 puts "Executing ~/.pryrc Initialization Script"
-def stack
+def full_stack
   caller.select {|line| line.include? "themis" }
+end
+
+def stack
+  trace = caller.select {|line| line.include? "themis" }
+  trace = trace.map do |e|
+    if e.include? "vendor"
+      e = '--'
+    end
+    e
+  end
+end
+
+def clear_query_cache
+  ActiveRecord::Base.connection.query_cache.clear
 end
 
 Dir.chdir('/home/vagrant/clio/themis')

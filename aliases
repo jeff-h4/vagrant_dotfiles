@@ -17,6 +17,10 @@ alias db-rb-test="bundle exec rake db:rollback RAILS_ENV=test"
 alias db-reset-dev='bundle exec rake db:drop db:create db:migrate && bundle exec rake db:seed || echo '\''failed'\'''
 alias db-reset-test='bundle exec rake db:drop db:create db:migrate RAILS_ENV=test || echo '\''failed'\'''
 alias edit-bash-aliases="vim ~/.bash_aliases"
+alias meta-server="META_REQUEST=1 bin/spring rails server -b 0.0.0.0"
+alias meta-resque="META_REQUEST=1 script/resque"
+alias profile-server="PROFILE=1 bin/spring rails server -b 0.0.0.0"
+alias profile-resque="PROFILE=1 script/resque"
 alias ps-rails="ps ax | grep rails"
 alias source-zshrc="pushd ~; source .zshrc; popd"
 alias sqlroot="mysql -u root -proot"
